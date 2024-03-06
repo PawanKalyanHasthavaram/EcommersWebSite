@@ -1,0 +1,86 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato','sans-serif';
+
+}
+/*https://wallpapers.com/images/high/city-sunset-material-design-fm1geo3cf6n9b0dm.webp*/
+/*https://wallpapers.com/images/high/colorful-hexagon-material-design-pc6fwib8mengravr.webp*/
+.landingPage{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+}
+.landingPage a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+.img1{
+    width: 250px;
+    height: 200px;
+    border-radius: 150px;
+}
+.img3{
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    top: 450px;
+    right: 50px;
+    
+    transform: rotatez(-45deg);
+}
+.img4{
+    position: absolute;
+    top: 400px;
+    left: 10px;
+    transform: rotatez(-45deg);
+    
+}
+.img5{
+    position: absolute;
+   scale: 0.7;
+    top: 400px;
+   z-index: 1;
+    
+   
+}
+.img6{
+    position: absolute;
+}  
+.img7{
+    position: absolute;
+    scale: 0.5;
+    top: 0px;
+}
+.merchantLogin{
+    background-color: tomato;
+    height: 100vh;
+    color: white;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.img8{
+    width: 400px;
+    height: 350px;
+}
+.title1{
+    position: absolute;
+    top: 10px;
+}
+.userLogin{
+
+    background-color: dodgerblue;
+    height: 100vh;
+    color: black;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
