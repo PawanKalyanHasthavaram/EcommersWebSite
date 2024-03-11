@@ -3,7 +3,7 @@ const User = () => {
     return ( 
         <div className="userLogin">
             <div className='title1'><h1>User Login</h1></div>
-            <div>
+            <div className='div1'>
                 <Form>
                     <Form.Group className="mb-3" controlId="formGroupEmail">
                         <Form.Label>Email address</Form.Label>

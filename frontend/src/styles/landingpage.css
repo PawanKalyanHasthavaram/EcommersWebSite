@@ -1,11 +1,11 @@
+/*This is the css of landingpage merchant merchantsignup user*/
+
 *{
     margin: 0px;
     padding: 0px;
     font-family: 'Lato','sans-serif';
 
 }
-/*https://wallpapers.com/images/high/city-sunset-material-design-fm1geo3cf6n9b0dm.webp*/
-/*https://wallpapers.com/images/high/colorful-hexagon-material-design-pc6fwib8mengravr.webp*/
 .landingPage{
     display: flex;
     justify-content: space-evenly;
@@ -22,21 +22,26 @@
     width: 250px;
     height: 200px;
     border-radius: 150px;
+    transition: transform 0.5s;
+}
+.img1:hover{
+   transform: scale(1.4);
 }
 .img3{
     position: absolute;
     width: 250px;
     height: 150px;
     top: 450px;
-    right: 50px;
-    
+    right: 50px;    
     transform: rotatez(-45deg);
+    border-radius: 10px;
 }
 .img4{
     position: absolute;
     top: 400px;
     left: 10px;
     transform: rotatez(-45deg);
+    border-radius: 10px;
     
 }
 .img5{
@@ -44,16 +49,18 @@
    scale: 0.7;
     top: 400px;
    z-index: 1;
-    
+   border-radius: 10px;
    
 }
 .img6{
     position: absolute;
+    border-radius: 10px;
 }  
 .img7{
     position: absolute;
     scale: 0.5;
     top: 0px;
+    border-radius: 10px;
 }
 .merchantLogin{
     background-color: tomato;
@@ -65,16 +72,31 @@
     align-items: center;
 
 }
+.div1{
+    padding: 50px;
+    transition: transform 2s;
+    scale: 1;
+
+}
+.div1:hover{
+    transform: scale(1.5);
+}
+.merchantLogin a{
+    text-decoration: none;
+    color:white;
+}
+
+
 .img8{
     width: 400px;
     height: 350px;
+    border-radius: 10px;
 }
 .title1{
     position: absolute;
     top: 10px;
 }
 .userLogin{
-
     background-color: dodgerblue;
     height: 100vh;
     color: black;
@@ -83,4 +105,85 @@
     justify-content: space-evenly;
     align-items: center;
 }
+.MerchantSignUp{
+    
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
 
+.img9 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+
+}
+
+.MerchantSignUpForm form{
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 300px;
+    width: 400px;
+    border: solid rgb(178, 98, 232) 3px;
+    border-radius: 30px;
+    border-top-left-radius: 0px;    
+    padding: 30px 20px 25px 20px;
+    transition: transform 1s;
+    
+   
+}
+.MerchantSignUpForm form:hover{
+    /* transform: rotateZ(360deg) scale(1.5); */
+   
+    
+}
+.MerchantSignUpForm:hover{
+    transform: rotateZ(360deg) scale(1.3);
+    transform: translate -100px;
+   
+}
+.MerchantSignUpForm{
+    transition: transform 2s;
+}
+.MerchantSignUpForm input{
+    margin: 5px 0px;
+    border: none;
+    outline: none;
+    border-bottom:  solid rgb(178, 98, 232) 3px;
+    font-size: 18px;
+}
+.MerchantSignUpForm button{
+    width: 100px;
+   padding: 5px 10px;
+   border-radius: 10px;
+   border: solid rgb(150, 31, 230) 2px;
+   background-color: rgba(155, 74, 210, 0.406)  ;
+   color: rgb(150, 31, 230);
+   margin-top: 10px;
+   transition: transform 2s;   
+}
+.MerchantSignUpForm button:hover{
+    width: 100px;
+   padding: 5px 10px;
+   border-radius: 10px;
+   border: solid rgb(150, 31, 230) 2px;
+   background-color: white ;
+   color: rgb(150, 31, 230);
+   margin-top: 10px;
+   transform: rotatez(360deg);   
+}
+.MerchantSignUpForm button:active{
+    width: 100px;
+   padding: 5px 10px;
+   border-radius: 10px;
+   border: solid rgb(150, 31, 230) 2px;
+   background-color: rgba(155, 74, 210, 0.406)  ;
+   color: rgb(150, 31, 230);
+   margin-top: 10px;
+   transform: scale(1.5);
+   
+}
