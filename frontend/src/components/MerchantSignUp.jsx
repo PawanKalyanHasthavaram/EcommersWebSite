@@ -11,16 +11,16 @@ const MerchantSignUp = () => {
     let [repassword,setrePassword]=useState("")
     let data={name,phone,email,gst_number,password}
     let navigate=useNavigate()
-    
+  
     function action1(i){
         i.preventDefault()
         if(password===repassword){
             axios.post(`http://localhost:1729/merchants`,data)
             .then(
                 (res)=>{
-                    
-                    navigate("/MerchantSignUp")
                     alert("details submited")
+                    navigate("/MerchantSignUp")
+                    
                 }
 
             ).catch(

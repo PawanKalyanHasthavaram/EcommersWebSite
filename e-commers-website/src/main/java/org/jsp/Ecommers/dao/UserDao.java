@@ -39,5 +39,8 @@ public class UserDao {
 		}
 		return false;
 	}
+	public Optional<User> findByToken(String token){
+		return repository.findByToken(token);
+	}
 
 }

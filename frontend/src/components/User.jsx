@@ -1,5 +1,13 @@
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 const User = () => {
+    let [email,setEmail]=useState("")
+    let [password,setPassword]=useState("")
+    function verify(e){
+        e.preventDefault()
+        
+    }
     return ( 
         <div className="userLogin">
             <div className='title1'><h1>User Login</h1></div>
@@ -15,7 +23,7 @@ const User = () => {
                     </Form.Group>
                     <Form.Group>
                         <button className='btn btn-primary mx-3'>sign in</button>
-                        <button className='btn btn-primary '>sign up</button>
+                        <button className='btn btn-primary '><Link to="/UserSignUp">SignUp</Link></button>
                     </Form.Group>
                 </Form>
             </div>

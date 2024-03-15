@@ -1,14 +1,16 @@
 package org.jsp.Ecommers.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 @Entity
 @Getter
 @Setter
@@ -27,4 +29,7 @@ public class Merchant {
 	@Column(nullable=false)
 	private String password;
 	private String status;
+	private String token;
+	@OneToMany(mappedBy = "merchant")
+	private List<Product> products;
 }

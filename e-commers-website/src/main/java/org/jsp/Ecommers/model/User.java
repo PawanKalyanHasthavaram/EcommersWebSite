@@ -7,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
-
 @Entity
 @Getter
 @Setter
@@ -27,4 +26,6 @@ public class User {
 	private String email;
 	@Column(nullable=false)
 	private String password;
+	private String token;
+	private String status;
 }

@@ -133,13 +133,9 @@
     border-top-left-radius: 0px;    
     padding: 30px 20px 25px 20px;
     transition: transform 1s;
-    
-   
 }
 .MerchantSignUpForm form:hover{
     /* transform: rotateZ(360deg) scale(1.5); */
-   
-    
 }
 .MerchantSignUpForm:hover{
     transform: rotateZ(360deg) scale(1.3);
@@ -187,3 +183,71 @@
    transform: scale(1.5);
    
 }
+.userLogin a{
+    text-decoration: none;
+    color:white;
+}
+.UserSignUpForm{
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 300px;
+    width: 400px;
+    border: solid rgb(131, 232, 98) 3px;
+    border-radius: 30px;
+    border-top-left-radius: 0px;    
+    padding: 30px 20px 25px 20px;  
+    transition: transform 2s ; 
+}
+.UserSignUpForm:hover{
+    transform: scale(1.3);
+}
+.UserSignUpForm label{
+    color: rgba(0, 0, 0, 0.699);
+    display: inline;
+    margin-right: 10px;
+
+}
+
+.UserSignUpForm input{
+    margin: 10px 0px;
+    display: inline;
+    border: none;
+    border-bottom: solid 1px rgba(25, 164, 25, 0.717);
+    
+    
+}
+.inp1{
+    width: 100%;
+}
+.UserSignUpForm button{
+   width: 100px;
+   padding: 5px 10px;
+   border-radius: 10px;
+   border: solid rgb(48, 230, 31) 2px;
+   background-color: rgba(74, 210, 88, 0.406)  ;
+   color: green;
+   margin-top: 10px;
+}
+.UserSignUpForm button:hover{
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: solid rgb(48, 230, 31) 2px;
+    background-color: rgba(74, 210, 88, 0)  ;
+    color: green;
+    margin-top: 10px;
+ }
+ .UserSignUpForm button:active{
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: solid rgb(48, 230, 31) 2px;
+    background-color: rgba(74, 210, 88, 0.406)  ;
+    color: green;
+    margin-top: 10px;
+ }
+ nav .logo{
+    background-color: greenyellow;
+ }

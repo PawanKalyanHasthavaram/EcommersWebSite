@@ -9,20 +9,32 @@ import org.jsp.Ecommers.Exception.InvalidCredentialsException;
 import org.jsp.Ecommers.dao.MerchantDao;
 import org.jsp.Ecommers.dto.ResponseStructure;
 import org.jsp.Ecommers.model.Merchant;
+import org.jsp.Ecommers.util.AccountStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import jakarta.servlet.http.HttpServletRequest;
+import net.bytebuddy.utility.RandomString;
+
 @Service
 public class MerchantServices {
 	@Autowired
 	private MerchantDao dao;
-	public ResponseStructure<Merchant> saveMerchant(Merchant merchant){
+	@Autowired
+	private ECommerceAppEmailService emailService;
+	public ResponseStructure<Merchant> saveMerchant(Merchant merchant,HttpServletRequest request){
 		ResponseStructure<Merchant> structure=new ResponseStructure<>();
-		structure.setMessage("Merchant Saved");
+		merchant.setStatus(AccountStatus.IN_ACTIVE.toString());
+		merchant.setToken(RandomString.make(45));
+		
 		structure.setData(dao.saveMerchant(merchant));
+		
+	    String message=emailService.sendWelcomeMail(merchant, request);
+		structure.setMessage("Merchant Saved"+","+message);
 		structure.setStatusCode(HttpStatus.CREATED.value());
+		
 		return structure;		
 	}
 	public ResponseEntity<ResponseStructure<Merchant>> updateMerchant(Merchant merchant){
@@ -124,6 +136,21 @@ public class MerchantServices {
 		
 		throw new InvalidCredentialsException("phone number or password is incorrect");
 		
+	}
+	public ResponseEntity<ResponseStructure<String>> active(String token){
+		Optional<Merchant> m=dao.findByToken(token);
+		ResponseStructure<String> structure=new ResponseStructure<>();
+		if(m.isPresent()) {
+			Merchant merchant=m.get();
+			merchant.setStatus(AccountStatus.ACTIVE.toString());
+			merchant.setToken(null);
+			dao.saveMerchant(merchant);
+			structure.setData("merchant found");
+			structure.setMessage("Account verified and activated");
+			structure.setStatusCode(HttpStatus.ACCEPTED.value());
+			return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.ACCEPTED);
+		}
+		throw new InvalidCredentialsException("Invalid url");
 	}
 	
 

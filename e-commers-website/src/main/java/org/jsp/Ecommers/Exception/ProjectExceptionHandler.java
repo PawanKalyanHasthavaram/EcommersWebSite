@@ -26,4 +26,29 @@ public class ProjectExceptionHandler extends ResponseEntityExceptionHandler{
 		return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.NOT_FOUND);
 		
 	}
+	@ExceptionHandler(UserIdNotFoundException.class)
+	public ResponseEntity<ResponseStructure<String>> handleIIDNFE(UserIdNotFoundException exception){
+		ResponseStructure<String> structure=new ResponseStructure<>();
+		structure.setMessage(exception.getMessage());
+		structure.setMessage("User not found");
+		structure.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.NOT_FOUND);
+	}
+	@ExceptionHandler(UserInvalidCredientialsException.class)
+	public ResponseEntity<ResponseStructure<String>> handleICE(UserInvalidCredientialsException exception){
+		ResponseStructure<String> structure=new ResponseStructure<>();
+		structure.setMessage(exception.getMessage());
+		structure.setData("User Not Found");
+		structure.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.NOT_FOUND);
+	}
+	@ExceptionHandler(ProductNotFoundException.class)
+	public ResponseEntity<ResponseStructure<String>> handlePNFE(ProductNotFoundException exception){
+		ResponseStructure<String> structure=new ResponseStructure<>();
+		structure.setMessage(exception.getMessage());
+		structure.setData("Product Not Found");
+		structure.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.NOT_FOUND);
+		
+	}
 }

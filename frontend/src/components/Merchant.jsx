@@ -12,6 +12,8 @@ const Merchant = () => {
         .then(
             (res)=>{
                 console.log(res)
+                localStorage.setItem("merchant",JSON.stringify(res.data.data))
+                alert("user login successful")
                 navigate("/MerchantHome")
             }
         )
