@@ -8,7 +8,7 @@ const Protect = ({Child}) => {
             return true
         }
     }                                                   
-    return ( 
+    return (
         <div>
             {verifyProtect ? <Child/> : <Navigate to="/merchant"/>}
         </div>

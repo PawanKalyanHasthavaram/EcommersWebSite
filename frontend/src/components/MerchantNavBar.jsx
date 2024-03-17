@@ -8,6 +8,7 @@ const MerchantNavBar = () => {
             <div className="option">
                 <Link to="/MerchantHome/productview">view products</Link>
                 <Link to="/MerchantHome/updatemerchant">Update merchant</Link>
+                <Link to="/MerchantHome/addProduct">Add product</Link>
 
             </div>
         </nav>
