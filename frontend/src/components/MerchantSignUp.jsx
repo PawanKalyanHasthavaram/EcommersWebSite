@@ -45,11 +45,17 @@ const MerchantSignUp = () => {
                 <h1>Sign Up</h1>
                 
             <form onSubmit={action1}>
+                <label htmlFor="">Name</label>
                 <input placeholder="name" value={name} onChange={(e)=>{setName(e.target.value)}} type="text" required/> 
+                <label htmlFor="">Phone Number</label>
                 <input placeholder="phone" value={phone} onChange={(e)=>{setPhone(e.target.value)}} type="tel" required/>
+                <label htmlFor="">Email</label>
                 <input placeholder="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" required/>
+                <label htmlFor="">GST number</label>
                 <input placeholder="gst_number" value={gst_number} onChange={(e)=>{setGstNumber(e.target.value)}} type="text" required/>
+                <label htmlFor="">Password</label>
                 <input placeholder="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" required/>
+                <label htmlFor="">Re-Password</label>
                 <input placeholder="repassword" value={repassword} onChange={(e)=>{setrePassword(e.target.value)}} type="password" required/>
                 <button>Sign up</button>
             </form>

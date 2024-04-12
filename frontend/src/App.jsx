@@ -10,6 +10,7 @@ import MerchantHome from './components/MerchantHome';
 import Error from './components/Error';
 import UserSignUp from './components/UserSignup';
 import Protect from './components/Protect';
+import UserHome from './components/UserHome';
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
           <Route path='/MerchantSignUp' element={<MerchantSignUp />} />
           <Route path='/MerchantHome/*' element={<Protect Child={MerchantHome} />} />
           <Route path='/UserSignUp' element={<UserSignUp />} />
+          <Route path='/UserHome/*' element={<UserHome/>}/>
         </Routes>
       </BrowserRouter>
 

@@ -8,35 +8,41 @@ const Merchant = () => {
     let navigate=useNavigate()
     function verifyMerchant(e){
         e.preventDefault();
-        axios.post(`http://localhost:1729/merchants/verify-by-email?email=${email}&password=${password}`)
+        if(email.includes('@')){
+            axios.post(`http://localhost:1729/merchants/verify-by-email?email=${email}&password=${password}`)
         .then(
             (res)=>{
-                console.log(res)
+                
                 localStorage.setItem("merchant",JSON.stringify(res.data.data))
-                alert("merchant login successful")
+                alert(res.data.message)
+               
                 navigate("/MerchantHome")
             }
         )
         .catch(
             (err)=>{
-                axios.get(`http://localhost:1729/merchants/verify-by-phone?phone=${email}&password=${password}`)
+                console.log(err)
+                alert(err.response.data.message)
+            }
+        )
+        }else{
+            axios.get(`http://localhost:1729/merchants/verify-by-phone?phone=${email}&password=${password}`)
                 .then(
                     (res)=>{
-                        console.log(res)
-                        alert("login successful")
+                       
+                        alert(res.data.message)
                         navigate("/MerchantHome")
                     }
                 )
                 .catch(
                     (err)=>{
                         console.log(err)
-                        alert("invalid")
+                        alert(err.response.data.message)
                     }
                 )
-                // console.log(err)
-                // alert("invalid")
-            }
-        )
+        }
+        
+        
     }
     return (
         <div className="merchantLogin">
